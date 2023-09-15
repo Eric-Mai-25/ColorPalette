@@ -9,11 +9,14 @@
 **Functionality & MVP**
 
 In ColorPalette, uers will be able to:
+
 - Able to generate default of 5 colors
 - Able to preview it by injecting CSS into a mock website
 - Able to save collections of their previous selections
 - Able to lock colors that the user likes and generate colors around them 
+
 Bonus Features
+
 - Able to inject CSS to a few live sites.
 - Able to preview colors applied to templated website
 - Able to preview colors on a premade buisness card
