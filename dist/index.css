@@ -4,3 +4,7 @@
     left: 550px; /* Adjust the desired left position */
     z-index: 2; /* Ensure it's above the canvas (higher z-index) */
 }
+
+body{
+    margin: 0;
+}
