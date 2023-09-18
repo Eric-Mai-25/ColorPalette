@@ -9,16 +9,36 @@
     <title>ColorPalette</title>
 </head>
 <body>
-    <h1>Coloring Buisness</h1>
-    <div id="box1Container">
+    
+    <div class="color-input">
+        <h1>Coloring Buisness</h1>
+        <div class="color-input-item">
+            <input type="color"id="color1">
+        </div>
+        <div class="color-input-item">
+            <input type="color"id="color2">
+        </div>
+        <div class="palette-swatch">
+            <select name="" id="palette-input">
+                <option value="6" selected >6</option>
+                <option value="7" >7</option>
+                <option value="8" >8</option>
+                <option value="9" >9</option>
+                <option value="10" >10</option>
+            </select>
+        </div>
+    </div>
+    <div class="palette" id="palette"></div>
+        
+    <!-- <div id="box1Container">
         <button id="preview">Preview</button>
     </div>
     <div class="navbar">
         <button id="box1Button">Box 1</button>
         <button id="box2Button">Box 2</button>
-        <!-- <button id="box3Button">Box 3</button>
-        <button id="box4Button">Box 4</button> -->
+        <button id="box3Button">Box 3</button>
+        <button id="box4Button">Box 4</button>
     </div>
-    <canvas id="home"></canvas>
+    <canvas id="home"></canvas> -->
 </body>
 </html>
