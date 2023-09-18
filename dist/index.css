@@ -39,7 +39,7 @@ body{
 
 .palette{
     display: flex;
-    border: 1px solid grey
+    border: 1px solid grey;
     flex-wrap: nowrap;
     height: calc(100%-48px);
 }
