@@ -1,0 +1,6 @@
+#box1Container {
+    position: absolute;
+    top: 580px; /* Adjust the desired top position */
+    left: 550px; /* Adjust the desired left position */
+    z-index: 2; /* Ensure it's above the canvas (higher z-index) */
+}
