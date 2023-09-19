@@ -102,11 +102,11 @@
 // renderBox1();
 
 import chroma from "chroma-js";
+const colorInput1 = document.getElementById('color1');
+const colorInput2 = document.getElementById('color2');
+const paletteCount = document.getElementById('palette-input');
 
 function run (){
-  const colorInput1 = document.getElementById('color1');
-  const colorInput2 = document.getElementById('color2');
-  const paletteCount = document.getElementById('palette-input');
 
   [colorInput1, colorInput2, paletteCount].forEach((cInput)=>{
     cInput.addEventListener("input", ()=>{
@@ -145,5 +145,7 @@ function generateColors(color1, color2, pCount){
 }
 
 window.addEventListener('load',()=>{
+  console.log("hello")
+  generateColors(colorInput1.value, colorInput2.value, 5)
   run()
 })
