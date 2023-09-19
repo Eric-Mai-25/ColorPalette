@@ -41,15 +41,15 @@ body{
     display: flex;
     border: 1px solid grey;
     flex-wrap: nowrap;
-    height: calc(100%-48px);
+    /* height: calc(100%-48px); */
 }
 
 .palette-item{
-    background-color: var(--palette-color);
-    height: 90vh;
-    width: 150px;
     position: relative;
+    background-color: var(--palette-color);
+    height: 87vh;
     flex: 1;
+    width: 150px;
 }
 
 .palette-color-value {
@@ -64,3 +64,67 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr 0.2fr;
+    grid-template-areas: 
+        "nav nav"
+        "Main content1"
+        "Main content2"
+        "Main content3"
+        "footer footer";
+    gap: 0.2rem;
+}
+
+nav{
+    background: lightpink;
+    grid-area: nav;
+}
+
+.Main{
+    grid-area: Main;
+}
+
+.content1{
+    background: lightblue;
+    grid-area: content1;
+}
+.content2{
+    background: lightcoral;
+    grid-area: content2;
+}
+.content3{
+    background: lightgreen;
+    grid-area: content3;
+}
+
+.footer{
+    background: lightsalmon;
+    grid-area: footer;
+}
+
+
+/* 328.47058823529414 */
+
+/* #icon1{
+    fill: #28e625
+}
+
+#icon1{
+    fill: #28e625
+}
+
+#icon1{
+    fill: #28e625
+}
+
+#icon1{
+    fill: #28e625
+}
+#icon1{
+    fill: #28e625
+} */

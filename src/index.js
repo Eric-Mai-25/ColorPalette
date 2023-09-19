@@ -1,7 +1,3 @@
-// // import { Theme, Color, BackgroundColor } from '@adobe/leonardo-contrast-colors';
-// import chroma from "chroma-js";
-
-
 // const canvas = document.getElementById('home');
 // const ctx = canvas.getContext('2d');
 
@@ -102,48 +98,76 @@
 // renderBox1();
 
 import chroma from "chroma-js";
+
+const generateButton = document.getElementById('generate')
+
+
 const colorInput1 = document.getElementById('color1');
 const colorInput2 = document.getElementById('color2');
+const svgColor = document.getElementById("icon1");
 
 function run (){
 
   [colorInput1, colorInput2].forEach((cInput)=>{
     cInput.addEventListener("input", ()=>{
-        //call a function that will generate color
-        generateColors(colorInput1.value, colorInput2.value, 5)
+
+      generateColors(colorInput1.value, colorInput2.value, 5)
     })
   })
 }
 
 function generateColors(color1, color2, pCount){
+  //Get all elements from div
   const palArray =  document.getElementById('palette')
+  //Reset
   palArray.innerHTML = "";
 
+  //get range of color from color 1 to color 2 with number of colors
   const palColors = chroma.scale([color1, color2]).mode("lch").colors(pCount)
-  //gets me the array of colors
+
+  colorSvg(palColors)
+  // svgColor.style.fill = palColors[0]
+
+  //iterate through the colors and create a div
   palColors.forEach(p => {
     const pItem = document.createElement('div')
-
     const paletteCValue = document.createElement("span")
+    console.log(chroma(`${p}`).hsl())
     paletteCValue.classList.add("palette-color-value")
     paletteCValue.style.setProperty(
       "--color-name",
       chroma.contrast(p, chroma(p).darken(3)) > 2
       ? chroma(p).darken(3)
       : chroma(p).luminance(3))
-
+    //generate color for text based off of how bright or dark the color is
     paletteCValue.appendChild(document.createTextNode(p))
-
+    //add the color and text to the panel
     pItem.appendChild(paletteCValue)
 
+    //add the panel itself with the color
     pItem.classList.add("palette-item")
     pItem.style.setProperty("--palette-color", p)
-
+    
     palArray.appendChild(pItem)
   })
 }
 
+function colorSvg(Arr){
+  const styleElement = document.createElement("style")
+  let count = 1
+  Arr.forEach((color)=>{
+    const cssRule = `#icon${count} {fill : ${color}}`
+    styleElement.appendChild(document.createTextNode(cssRule))
+    count++
+  })
+  document.head.appendChild(styleElement)
+}
+
 window.addEventListener('load',()=>{
-  generateColors(colorInput1.value, colorInput2.value, 5)
+  generateColors(chroma.random(), chroma.random(), 5)
   run()
+})
+
+generateButton.addEventListener('click', ()=>{
+  generateColors(chroma.random(), chroma.random(), 5);
 })
