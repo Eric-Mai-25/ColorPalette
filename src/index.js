@@ -104,14 +104,13 @@
 import chroma from "chroma-js";
 const colorInput1 = document.getElementById('color1');
 const colorInput2 = document.getElementById('color2');
-const paletteCount = document.getElementById('palette-input');
 
 function run (){
 
-  [colorInput1, colorInput2, paletteCount].forEach((cInput)=>{
+  [colorInput1, colorInput2].forEach((cInput)=>{
     cInput.addEventListener("input", ()=>{
         //call a function that will generate color
-        generateColors(colorInput1.value, colorInput2.value, paletteCount.value)
+        generateColors(colorInput1.value, colorInput2.value, 5)
     })
   })
 }
@@ -145,7 +144,6 @@ function generateColors(color1, color2, pCount){
 }
 
 window.addEventListener('load',()=>{
-  console.log("hello")
   generateColors(colorInput1.value, colorInput2.value, 5)
   run()
 })
