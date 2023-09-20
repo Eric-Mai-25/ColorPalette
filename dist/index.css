@@ -125,34 +125,21 @@ nav{
 }
 
 
-/* #icon1{
-    fill: #28e625
-}
-
-#icon1{
-    fill: #28e625
-}
-
-#icon1{
-    fill: #28e625
-}
-
-#icon1{
-    fill: #28e625
-}
-#icon1{
-    fill: #28e625
-} */
-
 /* .cls-16{
-
+  squiggle
 }
 
+bubble
 .cls-5{
 
 }
 
+background
 .cls-9, .cls-10 {
+}
+
+.nav-text{
+  fill: black
 }
 
 .cls-17 {
@@ -176,8 +163,9 @@ nav{
   fill: #e8acb3;
 }
 
+/* bubbles */
 .cls-5 {
-  fill: #282a35;
+  fill: var(--bubble);
 }
 
 .cls-6 {
@@ -196,8 +184,9 @@ nav{
   filter: url(#drop-shadow-1);
 }
 
+/* background */
 .cls-9, .cls-10 {
-  fill: #ffeee9;
+  fill: var(--back);
 }
 
 .cls-11 {
@@ -220,9 +209,10 @@ nav{
   fill: #efe6bf;
 }
 
-/* .cls-16 {
-  fill: #ff5386;
-} */
+/* cloud background */
+.cls-16 {
+  fill: var(--cBack);
+}
 
 .cls-17 {
   fill: #2b454e;
@@ -281,6 +271,11 @@ nav{
   fill: #190a10;
 }
 
+/* nav text */
 .nav-text{
-  fill: black
+  fill: var(--nav)
+}
+
+.sfont{
+  fill: var(--sFont);
 }

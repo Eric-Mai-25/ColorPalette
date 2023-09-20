@@ -3,7 +3,7 @@ const content2 = document.getElementById('cont2')
 
 export function importSvg(){
   content2.insertAdjacentHTML('beforeend', `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1187.47 868.69">
+<svg id="template" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1187.47 868.69">
   <defs>
 
     <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
@@ -32,7 +32,7 @@ export function importSvg(){
         </g>
       </g>
       <g id="Font">
-        <g>
+        <g class="sfont">
           <g>
             <path d="m775,389.06c-.95,2.8-2.5,5.04-4.61,6.64-2.24,1.68-4.91,2.5-8.06,2.5-4.1,0-7.42-1.34-9.87-4.05-2.59-2.8-3.88-6.73-3.88-11.69s1.29-8.8,3.88-11.6c2.46-2.67,5.78-4.01,9.96-4.01,3.15,0,5.87.82,8.11,2.46,2.03,1.51,3.45,3.54,4.27,6.08l-5.61,1.51c-1.34-3.06-3.66-4.57-7.03-4.57-2.46,0-4.36.86-5.69,2.59-1.42,1.77-2.11,4.31-2.11,7.55s.73,5.91,2.16,7.72c1.38,1.72,3.28,2.59,5.65,2.59,3.58,0,5.99-1.72,7.29-5.22l5.56,1.51Z"/>
             <path d="m788.06,386.74l-3.62.04v10.87h-5.74v-30.18h9.88c3.41,0,6.04.91,7.98,2.67,1.85,1.77,2.8,4.14,2.8,7.16,0,4.23-1.85,6.99-5.52,8.32l6.34,12.03h-6.68l-5.43-10.91Zm.73-4.66c3.15,0,4.74-1.51,4.74-4.57s-1.64-4.74-4.87-4.74h-4.23v9.31h4.36Z"/>

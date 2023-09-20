@@ -129,6 +129,7 @@ window.addEventListener("load", () => {
   importSvg();
   gen.generateColors(chroma.random(), chroma.random(), 5);
   gen.run();
+  gen.makePanels(5)
 });
 
 generateButton.addEventListener("click", () => {

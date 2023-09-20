@@ -4,7 +4,7 @@ import chroma from "chroma-js";
 const palArray =  document.getElementById('palette')
 
 
-export default class Panel {
+export default class Palette {
   constructor(color) {
     this.color = color;
   }
