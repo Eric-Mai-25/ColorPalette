@@ -23,27 +23,21 @@
 //   previewButton.style.display = "none"
 // }
 
-
 // function renderBox1() {
 //   ctx.clearRect(0, 0, canvas.width, canvas.height);
 //   showPreviewButton()
 
-
 //   ctx.fillStyle = 'blue';
 //   ctx.fillRect(0, 0, 100, 500);
-
 
 //   ctx.fillStyle = 'green';
 //   ctx.fillRect(110, 0, 100, 500);
 
-
 //   ctx.fillStyle = 'limegreen';
 //   ctx.fillRect(220, 0, 100, 500);
 
-
 //   ctx.fillStyle = 'red';
 //   ctx.fillRect(330, 0, 100, 500);
-
 
 //   ctx.fillStyle = 'lightblue';
 //   ctx.fillRect(440, 0, 100, 500);
@@ -71,7 +65,6 @@
 // //   ctx.fillRect(0, 0, 200, 200);
 // // }
 
-
 // previewButton.addEventListener('click', ()=>{
 //   renderBox2();
 // })
@@ -98,76 +91,57 @@
 // renderBox1();
 
 import chroma from "chroma-js";
+import { importSvg } from "./svgimport";
+import { colorSvg } from "./colorsvg";
+import Panel from "./pallette";
+import Generate from "./generate";
+import SavedCollection from "./saved";
 
-const generateButton = document.getElementById('generate')
+const generateButton = document.getElementById("generate");
+const saveButton = document.getElementById("save");
+const exportSaved =  document.getElementById('export')
 
 
-const colorInput1 = document.getElementById('color1');
-const colorInput2 = document.getElementById('color2');
+const palArray = document.getElementById("palette");
 const svgColor = document.getElementById("icon1");
 
-function run (){
 
-  [colorInput1, colorInput2].forEach((cInput)=>{
-    cInput.addEventListener("input", ()=>{
 
-      generateColors(colorInput1.value, colorInput2.value, 5)
-    })
-  })
-}
+// function generateColors(color1, color2, pCount) {
+//   //Get all elements from div
+//   //Reset
+//   palArray.innerHTML = "";
+//   //get range of color from color 1 to color 2 with number of colors
+//   const palColors = chroma.scale([color1, color2]).mode("lch").colors(pCount);
 
-function generateColors(color1, color2, pCount){
-  //Get all elements from div
-  const palArray =  document.getElementById('palette')
-  //Reset
-  palArray.innerHTML = "";
+//   colorSvg(palColors);
+//   // svgColor.style.fill = palColors[0]
 
-  //get range of color from color 1 to color 2 with number of colors
-  const palColors = chroma.scale([color1, color2]).mode("lch").colors(pCount)
+//   //iterate through the colors and create a div
+//   pannel.createPanel(palColors)
+//   // createPanel(palColors)
+// }
 
-  colorSvg(palColors)
-  // svgColor.style.fill = palColors[0]
 
-  //iterate through the colors and create a div
-  palColors.forEach(p => {
-    const pItem = document.createElement('div')
-    const paletteCValue = document.createElement("span")
-    console.log(chroma(`${p}`).hsl())
-    paletteCValue.classList.add("palette-color-value")
-    paletteCValue.style.setProperty(
-      "--color-name",
-      chroma.contrast(p, chroma(p).darken(3)) > 2
-      ? chroma(p).darken(3)
-      : chroma(p).luminance(3))
-    //generate color for text based off of how bright or dark the color is
-    paletteCValue.appendChild(document.createTextNode(p))
-    //add the color and text to the panel
-    pItem.appendChild(paletteCValue)
 
-    //add the panel itself with the color
-    pItem.classList.add("palette-item")
-    pItem.style.setProperty("--palette-color", p)
-    
-    palArray.appendChild(pItem)
-  })
-}
 
-function colorSvg(Arr){
-  const styleElement = document.createElement("style")
-  let count = 1
-  Arr.forEach((color)=>{
-    const cssRule = `#icon${count} {fill : ${color}}`
-    styleElement.appendChild(document.createTextNode(cssRule))
-    count++
-  })
-  document.head.appendChild(styleElement)
-}
+window.addEventListener("load", () => {
+  importSvg();
+  gen.generateColors(chroma.random(), chroma.random(), 5);
+  gen.run();
+});
 
-window.addEventListener('load',()=>{
-  generateColors(chroma.random(), chroma.random(), 5)
-  run()
-})
+generateButton.addEventListener("click", () => {
+  gen.generateColors(chroma.random(), chroma.random(), 5);
+});
 
-generateButton.addEventListener('click', ()=>{
-  generateColors(chroma.random(), chroma.random(), 5);
-})
+saveButton.addEventListener("click", () => {
+  gen.save()
+});
+
+exportSaved.addEventListener("click", () => {
+  gen.export()
+});
+
+
+const gen = new Generate
