@@ -73,7 +73,7 @@ export default class Panel {
     lockIcon.classList.add("lock")
 
     // lockIcon.classList.add('lockIcon')
-    let imgSrc = this.lock ? 'src/styles/lock/lock.svg' : "src/styles/unlock/unlock.svg"
+    let imgSrc = this.lock ? './src/styles/Lock.svg' : "./src/styles/Unlock.svg"
     lockIcon.src = imgSrc
     
     const lockUp = document.getElementById(`${this.color}`);
@@ -97,6 +97,10 @@ export default class Panel {
     //     let imgSrc = this.lock ? '/src/styles/lock/lock.svg' : "/src/styles/unlock/unlock.svg"
     //     lockIcon.src = imgSrc
     // })
+  }
+
+  unlock(){
+    this.lock = false
   }
 }
 

@@ -43,7 +43,14 @@ body{
     /* height: calc(100%-48px); */
 }
 
+
+.palette-item:hover{
+  transform: scale(0.9); 
+  z-index: 1;
+}
+
 .palette-item{
+    transition: all .2s ease-in-out; 
     position: relative;
     background-color: var(--palette-color);
     height: 82vh;
@@ -291,8 +298,7 @@ nav{
 
 
 
-.raise:hover,
-.raise:focus {
+.raise:hover{
   box-shadow: 0 0.5em 0.5em -0.4em adjust-hue(#ffa260, 45deg);
   transform: translateY(-0.25em);
 }
@@ -328,6 +334,16 @@ nav{
     top: 0;
     right: 0;
     margin: 10px;
+    transition: all .2s ease-in-out;
+}
+
+
+.linked:hover{
+  transform: scale(1.1); 
+}
+
+.gited:hover{
+  transform: scale(1.1); 
 }
 
 #template{

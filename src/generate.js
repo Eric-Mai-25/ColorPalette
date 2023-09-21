@@ -74,7 +74,6 @@ export default class Generate {
   }
 
   update(color){
-
         this.currentPalette = color
         this.generatePanels(this.currentPalette)
   }
@@ -83,7 +82,15 @@ export default class Generate {
     palArray.innerHTML= ""
     let svg = importSvg();
     palArray.insertAdjacentHTML('beforeend', svg )
-    colorSvg(this.currentPalette)
+    colorSvg(this.currentPalette, '110vh')
+  }
+
+  unlock(){
+    console.log('in')
+    this.panels.forEach((pan)=>{
+        pan.unlock()
+        this.generatePanels()
+    })
   }
   export() {
     this.saved.export();

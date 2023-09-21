@@ -15,7 +15,6 @@ const previewButton =  document.getElementById('preview')
 const palArray = document.getElementById("palette");
 const svgColor = document.getElementById("icon1");
 const content2 = document.getElementById('cont2');
-const main = document.getElementById('main');
 
 
 
@@ -33,6 +32,8 @@ generateButton.addEventListener("click", () => {
 
 saveButton.addEventListener("click", () => {
   gen.save()
+  gen.unlock()
+
 });
 
 exportSaved.addEventListener("click", () => {
