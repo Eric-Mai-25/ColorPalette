@@ -24,15 +24,14 @@ export default class SavedCollection{
             count++
             sItem.classList.add(`save-item`)
             sItem.classList.add(`button${count}`)
-            sItem.style.background = `linear-gradient(60deg, ${collObj[0]}, ${collObj[1]}, ${collObj[2]}, ${collObj[3]}, ${collObj[4]})` 
+            sItem.style.background = `linear-gradient(60deg, ${collObj[0]} 20%, 
+                ${collObj[1]} 20% 40%, 
+                ${collObj[2]} 40% 60%, 
+                ${collObj[3]} 60% 80%, 
+                ${collObj[4]} 80%)` 
 
             sItems.appendChild(sItem)
             
-            // for(const key in collObj){
-            //     const sItem = document.createElement('button')
-            //     sItem.classList.add("save-item")
-            //     sItems.appendChild(sItem)
-            // }
             saved.appendChild(sItems)
 
             sItem.addEventListener('click', ()=>{

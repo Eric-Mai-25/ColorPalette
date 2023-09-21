@@ -68,7 +68,6 @@ export default class Panel {
   }
 
   createLock(){
-    // const palArray = document.getElementById("palette");
     const lockIcon = document.createElement('img')
     lockIcon.setAttribute("id", `lock${this.color}`);
     lockIcon.classList.add("lock")
@@ -89,6 +88,7 @@ export default class Panel {
         this.generate()
     })
 
+    // On hover stuff.
     // lockUp.addEventListener("mouseenter",()=>{
     //     let imgSrc = this.lock ? '/src/styles/unlock/unlock.svg' : "/src/styles/lock/lock.svg"
     //     lockIcon.src = imgSrc

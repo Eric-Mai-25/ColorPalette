@@ -1,8 +1,6 @@
-const newSvg = document.createElement('svg')
-const content2 = document.getElementById('cont2')
 
 export function importSvg(){
-  content2.insertAdjacentHTML('beforeend', `<?xml version="1.0" encoding="UTF-8"?>
+  return `<?xml version="1.0" encoding="UTF-8"?>
 <svg id="template" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1187.47 868.69">
   <defs>
 
@@ -457,5 +455,5 @@ export function importSvg(){
       </g>
     </g>
   </g>
-</svg>`)
+</svg>`
 }

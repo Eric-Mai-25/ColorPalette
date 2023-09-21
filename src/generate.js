@@ -1,5 +1,6 @@
 import Palette from "./pallette";
 import { colorSvg } from "./colorsvg";
+import { importSvg } from "./svgimport";
 import chroma from "chroma-js";
 import SavedCollection from "./saved";
 import Panel from "./panel";
@@ -78,6 +79,12 @@ export default class Generate {
         this.generatePanels(this.currentPalette)
   }
 
+  generatePre(){
+    palArray.innerHTML= ""
+    let svg = importSvg();
+    palArray.insertAdjacentHTML('beforeend', svg )
+    colorSvg(this.currentPalette)
+  }
   export() {
     this.saved.export();
   }
