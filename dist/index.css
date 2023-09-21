@@ -44,10 +44,10 @@ body{
 }
 
 
-.palette-item:hover{
+/* .palette-item:hover{
   transform: scale(0.9); 
   z-index: 1;
-}
+} */
 
 .palette-item{
     transition: all .2s ease-in-out; 

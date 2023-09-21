@@ -64,6 +64,18 @@ export default class Panel {
 
     palArray.appendChild(pItem);
 
+    if(!this.lock){
+      pItem.addEventListener('mouseover',()=>{
+        pItem.style.transform = "scale(0.98)"
+        pItem.style.zIndex = "1"
+  
+      })
+      pItem.addEventListener('mouseout',()=>{
+        pItem.style.transform = "scale(1)"
+        pItem.style.zIndex = "1"
+  
+      })
+    }
     this.createLock()
   }
 
@@ -73,9 +85,8 @@ export default class Panel {
     lockIcon.classList.add("lock")
 
     // lockIcon.classList.add('lockIcon')
-    let imgSrc = this.lock ? './src/styles/Lock.svg' : "./src/styles/Unlock.svg"
+    let imgSrc = this.lock ? "./src/styles/Lock.svg" : "./src/styles/Unlock.svg"
     lockIcon.src = imgSrc
-    
     const lockUp = document.getElementById(`${this.color}`);
     lockUp.appendChild(lockIcon)
     
