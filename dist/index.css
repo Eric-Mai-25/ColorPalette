@@ -11,8 +11,8 @@ body{
     /* background-image: linear-gradient(to bottom right, #00d2e2
     , #00cffe, #00afff, #0087ff, #844fdb
     ); */
-    background-image: linear-gradient(to bottom right, #004868
-    , #50007e, #00245e
+    background-image: linear-gradient(to bottom right, #1c1c1c
+    , #5441fd, #00245e
     );
     /* background-color: rgb(0, 0, 0); */
     font-family: Arial, Helvetica, sans-serif;
@@ -364,6 +364,7 @@ nav{
 
 .title_text_animated {
   background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  /* background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff); */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -380,4 +381,10 @@ nav{
   50% {
       background-position: 100% 0;
   }
+}
+
+h3{
+  color: white;
+  margin-left: 10px;
+  font-size: 20px;
 }
