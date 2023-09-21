@@ -67,14 +67,13 @@ export default class Panel {
     if(!this.lock){
       pItem.addEventListener('mouseover',()=>{
         pItem.style.transform = "scale(0.98)"
-        pItem.style.zIndex = "1"
-  
       })
-      pItem.addEventListener('mouseout',()=>{
+      pItem.addEventListener("mouseleave",()=>{
         pItem.style.transform = "scale(1)"
-        pItem.style.zIndex = "1"
   
       })
+    }else {
+        pItem.style.transform = "scale(0.98)"
     }
     this.createLock()
   }

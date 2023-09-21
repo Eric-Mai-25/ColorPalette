@@ -15,6 +15,7 @@ export default class Generate {
     this.currentPalette = {};
     this.panels = [];
     this.saved = new SavedCollection(this.update.bind(this));
+    this.previewToggle = false
   }
 
   generateColors(color1, color2, amount) {
@@ -81,8 +82,15 @@ export default class Generate {
   generatePre(){
     palArray.innerHTML= ""
     let svg = importSvg();
-    palArray.insertAdjacentHTML('beforeend', svg )
-    colorSvg(this.currentPalette, '110vh')
+
+    if(!this.previewToggle){
+        palArray.insertAdjacentHTML('beforeend', svg )
+        colorSvg(this.currentPalette, '110vh')
+        this.previewToggle = true
+    } else {
+        this.generatePanels()
+        this.previewToggle = false
+    }
   }
 
   unlock(){
