@@ -13,8 +13,7 @@ export default class Generate {
     this.collection = [];
     this.currentPalette = {};
     this.panels = [];
-    this.pan = new Palette();
-    this.saved = new SavedCollection();
+    this.saved = new SavedCollection(this.update.bind(this));
   }
 
   generateColors(color1, color2, amount) {
@@ -50,14 +49,14 @@ export default class Generate {
 
   makePanels(){
     for(const key in this.currentPalette){
-        this.panels.push(new Panel(this.currentPalette[key]))
+        this.panels.push(new Panel(this.currentPalette[key], this.generatePanels.bind(this), key))
     }
     this.panels.forEach((pan)=>{
         pan.createPanel()
     })
   }
   
-  generatePanels(palColors) {
+  generatePanels() {
     //Reset
     palArray.innerHTML = "";
     
@@ -69,8 +68,14 @@ export default class Generate {
         this.currentPalette[count] = color
         count++
     })
-    colorSvg(palColors); //sending in an object
+    colorSvg(this.currentPalette); //sending in an object
     // this.pan.createPanel(palColors);
+  }
+
+  update(color){
+
+        this.currentPalette = color
+        this.generatePanels(this.currentPalette)
   }
 
   export() {
